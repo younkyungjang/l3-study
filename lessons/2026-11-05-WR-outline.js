@@ -29,6 +29,8 @@ L3.add({
         { q: 'You can send the report to me ( ? ) email.', choices: ['by', 'with'], answer: 'by', explain: 'by + 수단: by email, by plane, by text message' },
         { q: 'We decided to travel ( ? ) Japan for our summer vacation.', choices: ['to', 'about', 'with', 'by'], answer: 'to', explain: 'to + 장소: ~로' },
         { q: 'Have you received the email ( ? ) throwing a birthday party for our aunt?', choices: ['about', 'by', 'to', 'with'], answer: 'about', explain: 'about: ~에 대한' },
+        { q: 'Have you received the email about throwing a birthday party ( ? ) our aunt?', choices: ['for', 'about', 'by', 'with'], answer: 'for', explain: '판서 정답 5번: about, for' },
+        { q: 'We decided to travel to Japan ( ? ) our summer vacation.', choices: ['for', 'by', 'about', 'with'], answer: 'for', explain: '판서 정답 4번: to, for' },
         { q: 'I went to France ( ? ) plane.', choices: ['by', 'with', 'for', 'about'], answer: 'by' },
         { q: 'This magazine is ( ? ) birds.', choices: ['about', 'for', 'to', 'by'], answer: 'about' },
       ],
@@ -38,7 +40,7 @@ L3.add({
       items: [
         { q: '[1번] 나는 친구들과 야구 경기를 봤다.', answer: 'I saw a baseball game with my friends.', say: 'I saw a baseball game with my friends.' },
         { q: '[7번] 너 작년에 그녀의 남미 여행에 대해 들었니?', answer: 'Did you hear about her trip to South America last year?', say: 'Did you hear about her trip to South America last year?' },
-        { q: '[6번] 나는 조부모님을 위한 결혼기념일 선물을 사고 싶었다.', answer: 'I wanted to get a wedding anniversary gift for my grandparents.', explain: '학습지 단어 카드에는 grandparent\'s로 적혀 있지만 문장에서는 grandparents가 자연스러워요.' },
+        { q: '[6번] 나는 조부모님의 결혼기념일을 위한 선물을 사고 싶었다.', answer: "I wanted to get a gift for my grandparent's wedding anniversary.", explain: '11/6 선생님 판서 정답 문장이에요.' },
         { q: '[2번] 그녀를 위해 그 꽃다발을 샀니?', answer: 'Did you buy that bunch of flowers for her?' },
       ],
     },
@@ -55,7 +57,7 @@ L3.add({
     {
       id: 'toefl-speak', title: 'TOEFL 말하기 연습', guide: '틀을 보고 내 이야기로 말해 보기 (스스로 채점)', type: 'speak',
       items: [
-        { q: '[Opinion] 내 인생 최고의 순간이 무엇인지 한 문장으로 말해 보세요.', answer: 'One of the best moments of my life was when ~.' },
+        { q: '[Opinion] 내 인생 최고의 순간이 무엇인지 한 문장으로 말해 보세요.', answer: 'One of the best moments of my life was when ~.', explain: '선생님 예시(판서): I took my first trip to New York. / I went sightseeing which was fun. / I watched an exciting Broadway show. / I ate New York pizza which was delicious.' },
         { q: '[Reason 1 + Detail] First, 로 시작해서 첫 번째 이유와 예시를 말해 보세요.', answer: 'First, it was one of a kind because ~. For example, ~.' },
         { q: '[Reason 2 + Detail] Second, 로 두 번째 이유를 말하고 celebrate를 넣어 보세요.', answer: 'Second, my family celebrated ~ together. ~' },
         { q: '[Reason 3 + Detail] Finally, 로 마지막 이유를 말하고 emotional / memory를 넣어 보세요.', answer: 'Finally, it was an emotional moment. When I look back on this memory, I ~.' },
@@ -75,6 +77,17 @@ L3.add({
         { q: 'on the go (phr.)', answer: '이동 중에' },
         { q: 'filling (adj.)', answer: '배가 부른, 든든한', explain: '학습지에는 "소, 속"으로 적혀 있는데, 이건 명사(만두소) 뜻이에요. 음식이 filling하다 = 든든하다.' },
         { q: 'healthy (adj.)', answer: '건강에 좋은' },
+      ],
+    },
+    {
+      id: 'ideas', title: '에세이 아이디어 (판서)', guide: '선생님이 칠판에 정리한 Agree / Disagree 이유', type: 'mc',
+      items: [
+        { q: 'Street food is cheaper → 근거는?', choices: ['You can get more food for the same price.', 'They have to meet hygiene standards.', 'Staff cleans up.', 'You can stay cool in summer.'], answer: 'You can get more food for the same price.' },
+        { q: 'Street food is quicker and more convenient → 근거는?', choices: ['No long waiting times, food is ready quickly.', 'Meals are brought to you.', 'Food and safety guidelines.', 'Air conditioning and heating.'], answer: 'No long waiting times, food is ready quickly.' },
+        { q: 'You can eat on the go → 근거는?', choices: ['Food is wrapped for handheld eating.', 'Waiters provide service.', 'Restaurants are cleaner.', 'You can get more food.'], answer: 'Food is wrapped for handheld eating.' },
+        { q: 'Restaurants are cleaner → 근거는?', choices: ['They have to meet certain hygiene standards.', 'Food is ready quickly.', 'Food is wrapped.', 'It is cheaper.'], answer: 'They have to meet certain hygiene standards.' },
+        { q: 'Restaurants have waiters and provide service → 근거는?', choices: ['Meals are brought to you and staff cleans up.', 'No long waiting times.', 'You can eat on the go.', 'More food for the same price.'], answer: 'Meals are brought to you and staff cleans up.' },
+        { q: '다음 중 Disagree(레스토랑이 낫다) 쪽 이유는?', choices: ['Air conditioning and heating: you can stay cool or warm.', 'Street food is cheaper.', 'Quicker and more convenient.', 'You can eat on the go.'], answer: 'Air conditioning and heating: you can stay cool or warm.' },
       ],
     },
     {
