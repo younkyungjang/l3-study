@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>L3 영어 공부</title>
+<style>
+  :root { --bg:#fafaf7; --ink:#222; --sub:#777; --line:#e6e4dc; --pri:#3b6fd8; --good:#2e9e5b; --bad:#d9534f; --card:#fff; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:16px/1.5 -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; background:var(--bg); color:var(--ink); }
+  #app { max-width:720px; margin:0 auto; padding:16px; }
+  .top { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+  .top h1 { font-size:20px; margin:0; }
+  .back { color:var(--sub); text-decoration:none; white-space:nowrap; }
+  h2 { font-size:15px; color:var(--sub); margin:22px 0 8px; }
+  a { color:var(--pri); }
+  .review-cta { display:block; padding:16px; border-radius:14px; background:#fff2e5; border:2px solid #f3b36b; color:var(--ink); text-decoration:none; }
+  .review-cta.calm { background:#eef6ef; border-color:#a9d4b3; }
+  .review-cta b { font-size:18px; display:block; } .review-cta span { color:var(--sub); font-size:14px; }
+  .cards { display:grid; gap:10px; }
+  .card { display:block; padding:14px; border-radius:12px; background:var(--card); border:1px solid var(--line); text-decoration:none; color:var(--ink); border-left:6px solid #bbb; }
+  .cat-LC { border-left-color:#3b6fd8; } .cat-WR { border-left-color:#8a4fd8; } .cat-KT { border-left-color:#e08a1e; } .cat-PK { border-left-color:#d84f6b; }
+  .tag { font-size:12px; color:var(--sub); } .ctitle { font-weight:600; } .meta { font-size:13px; color:var(--sub); }
+  .bar, .progress { height:6px; background:#eee; border-radius:4px; overflow:hidden; margin-top:8px; }
+  .bar span, .progress span { display:block; height:100%; background:var(--good); }
+  .info { background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px; font-size:14px; }
+  .plan { padding-left:20px; font-size:14px; } .plan li { margin:4px 0; }
+  .secs { display:grid; gap:8px; }
+  .sec { display:flex; align-items:center; gap:12px; padding:12px; background:#fff; border:1px solid var(--line); border-radius:12px; text-decoration:none; color:var(--ink); }
+  .sec .num { width:28px; height:28px; border-radius:50%; background:#eef; display:flex; align-items:center; justify-content:center; font-weight:700; flex:none; }
+  .sec.done .num { background:var(--good); color:#fff; }
+  .stitle { flex:1; font-weight:600; } .stitle small { display:block; font-weight:400; color:var(--sub); font-size:13px; }
+  .sstat { font-size:13px; color:var(--sub); white-space:nowrap; } .sstat em { color:var(--bad); font-style:normal; }
+  .checks { display:grid; gap:6px; } .check { background:#fff; border:1px solid var(--line); border-radius:10px; padding:10px; display:flex; gap:8px; align-items:flex-start; }
+  .check input { width:20px; height:20px; flex:none; margin-top:2px; }
+  .qbox { background:#fff; border:1px solid var(--line); border-radius:16px; padding:18px; margin-top:12px; }
+  .sec-label { font-size:13px; color:var(--sub); } .sec-label em { color:var(--bad); font-style:normal; }
+  .q { font-size:20px; font-weight:600; margin:8px 0 14px; white-space:pre-line; }
+  .choices { display:grid; gap:8px; }
+  .choice, .btn, .tok, .say { font:inherit; cursor:pointer; border-radius:12px; border:1px solid var(--line); background:#fff; padding:12px 14px; text-align:left; }
+  .choice:hover:not(:disabled) { border-color:var(--pri); }
+  .choice.right { background:#e3f5ea; border-color:var(--good); } .choice.wrong { background:#fbe5e4; border-color:var(--bad); }
+  .btn { background:var(--pri); color:#fff; border:none; text-align:center; text-decoration:none; display:inline-block; }
+  .btn.ghost { background:#fff; color:var(--pri); border:1px solid var(--pri); }
+  .btn.good { background:var(--good); } .btn.bad { background:var(--bad); }
+  .say { background:#f1f4fb; margin-bottom:12px; padding:8px 14px; }
+  .row { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
+  #f { display:flex; gap:8px; } #inp { flex:1; font:inherit; font-size:18px; padding:12px; border:1px solid var(--line); border-radius:12px; }
+  .hint { color:var(--sub); font-size:14px; }
+  .built { min-height:52px; padding:12px; border:2px dashed var(--line); border-radius:12px; font-size:18px; margin-bottom:10px; }
+  .built i { color:#aaa; font-size:14px; }
+  .tokens { display:flex; flex-wrap:wrap; gap:6px; } .tok { padding:8px 12px; } .tok:disabled { opacity:.25; }
+  .answer { font-size:18px; font-weight:600; padding:10px; background:#f6f6f2; border-radius:10px; margin:8px 0; }
+  .fb { margin-top:14px; padding:12px; border-radius:12px; } .fb.good { background:#e3f5ea; } .fb.bad { background:#fbe5e4; }
+  #fb .btn { margin-top:10px; width:100%; }
+  .result { background:#fff; border:1px solid var(--line); border-radius:16px; padding:20px; text-align:center; }
+  .result .big { font-size:40px; font-weight:800; } .result ul { text-align:left; } .result .row { justify-content:center; }
+  .small { font-size:13px; color:var(--sub); }
+</style>
+</head>
+<body>
+<div id="app">불러오는 중...</div>
+<script src="lessons/manifest.js"></script>
+<script src="app.js"></script>
+<script>L3.start();</script>
+</body>
+</html>
