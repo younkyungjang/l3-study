@@ -1,0 +1,39 @@
+{
+  "notion": {
+    "account": "브라우저에 로그인된 Notion 계정 (workspace \"Kay\", 페이지 MJ Crassen)",
+    "workspace": "Kay",
+    "studyPageId": "4130e998-24a0-80c0-968e-d77facda4955",
+    "studyPageUrl": "https://www.notion.so/4130e99824a080c0968ed77facda4955",
+    "database": {
+      "blockId": "17d06832-8116-44dd-abb1-c0eca20d3159",
+      "collectionId": "b895479c-b254-492f-bdf6-97d6a5c93657",
+      "viewId": "57fd66b7-b69f-4730-90b3-c3db54f68bab",
+      "props": {
+        "title": "title(이름)",
+        "cat1": "카테고리 select: LC 수업|Writing & Speaking|한국인T|누적패킷",
+        "date": "게시일 date",
+        "due1": "마감 text",
+        "stat": "상태 select: 진행 전|진행 중|완료",
+        "quiz": "퀴즈 링크 url",
+        "band": "밴드 원본 url"
+      }
+    },
+    "rows": {
+      "2026-11-05-WR-outline": "9ac623c5-3815-416b-bb33-54ef016784b3",
+      "2026-11-02-LC-U13": "26fbf040-b2bd-48af-b97d-cf68d807b7f8",
+      "2026-10-29-KT-U12": "c30e37eb-8d4b-4dd4-a30a-b50d210e1430",
+      "2026-10-PK-grammar": "19b09c7b-e9ed-4465-8082-6737578e9476",
+      "2026-11-08-KT-U13": "4b60dab3-0ac9-4d96-9d6b-4912548c3150"
+    },
+    "howToAddRow": "Create the row with ALL properties at creation time (setting properties later returns 400): _notion.createRecord({table:'block', parent:{id:collectionId, table:'collection'}, child_list_key:'', type:'page', properties:{title:[[t]], cat1:[[c]], date:[['‣',[['d',{type:'date',start_date:'YYYY-MM-DD'}]]]], due1:[[d]], stat:[['진행 전']], band:[[u,[['a',u]]]], quiz:[[q,[['a',q]]]]}}). Then row.children.addFromMarkdown('> 마감/밴드 원본\\n## 퀴즈'), then embed block: _notion.createRecord({table:'block', parent:{id:rowId, table:'block'}, type:'embed', properties:{source:[[q]]}, format:{display_source:q, block_page_width:true, block_height:720}}), then addFromMarkdown('## 공부 순서 / ## 숙제 체크 (to-dos) / ## 정답 노트'). To fix a row, remove it and recreate.",
+    "mainQuizEmbed": "embed of siteUrl placed before the database block"
+  },
+  "site": {
+    "repo": "younkyungjang/l3-study",
+    "siteUrl": "https://younkyungjang.github.io/l3-study/",
+    "lessonUrl": "https://younkyungjang.github.io/l3-study/#/lesson/<id>",
+    "localClone": "skills/user/band-l3-study/site (git, branch main)",
+    "tokenFile": "skills/user/band-l3-study/.secrets/github_token (fine-grained PAT, l3-study only: Contents+Pages RW). NEVER commit it.",
+    "push": "cd site && git add -A && git commit -m ... && git push https://x-access-token:$(cat ../.secrets/github_token)@github.com/younkyungjang/l3-study.git HEAD:main ; Pages rebuilds in ~30s"
+  }
+}
